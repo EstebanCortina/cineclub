@@ -9,11 +9,14 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 //Routers
-const routerGetMovie = require('./routers/routerGetMovie');
-app.use('/movie', routerGetMovie);
+const routerMovie = require('./routes/movie');
+app.use('/', routerMovie);
 
-const routerDailyMovie = require('./routers/routerDailyMovie');
-app.use('/dailymovie', routerDailyMovie);
+const routerDailyMovie = require('./routes/dailyMovie');
+app.use('/', routerDailyMovie);
+
+const routerExample = require('./routes/routerExample');
+app.use('/', routerExample);
 
 //Homepage (Aún no se que habrá ahí)
 app.get('/', function (req, res) {

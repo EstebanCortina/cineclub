@@ -1,6 +1,6 @@
 const { API_KEY } = require('../config/config.js');
 const axios = require('axios');
-let res = [];
+
 
 function getMovieData() {
   return new Promise((resolve, reject) => {
@@ -22,8 +22,7 @@ function getMovieData() {
             revenue,
             runtime
           }
-          res.push(movieData);
-          resolve();
+          resolve(movieData);
         });
     } catch (error) {
       reject(error);
@@ -32,6 +31,7 @@ function getMovieData() {
 }
 
 function getTranslatedData() {
+  let res = [];
   return new Promise((resolve, reject) => {
     axios.get(`https://api.themoviedb.org/3/movie/76341/translations?api_key=${API_KEY}`)
       .then(response => {
