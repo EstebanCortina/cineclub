@@ -1,2 +1,8 @@
 /config
 /node_modules
+
+/modules/getMovie
+
+/routes/routerExample
+
+/controllers/controllerExample
