@@ -1,3 +1,5 @@
+
+
 const titulo = document.getElementById('titulo');
 const uno = document.getElementById('uno');
 const dos = document.getElementById('dos');
@@ -5,17 +7,31 @@ const tres = document.getElementById('tres');
 const btnEN = document.getElementById('btnEN');
 const btnMX = document.getElementById('btnMX');
 const btnES = document.getElementById('btnES');
+let poster = null;
 
-fetch('/movie')
-  .then(response => response.json())
-  .then(data => {
-    console.log(data);
+if (!localStorage.getItem('movie')) {
+  fetch('/movie')
+    .then(response => response.json())
+    .then(data => {
+      console.log("Fetch!");
+      localStorage.setItem('movie', JSON.stringify(data));
+      console.log(JSON.parse(localStorage.getItem('movie')));
+    })
+    .catch(error => {
+      console.error(error);
+    });
+} else {
+  console.log("No fetch");
+}
 
-  })
-  .catch(error => {
-    console.error(error);
-  });
 
+
+
+
+/*
+poster = data.poster_path;
+uno.setAttribute('src', `https://image.tmdb.org/t/p/w500/${poster}`);
+*/
 
 /*
 fill.then(response => {
