@@ -1,4 +1,5 @@
 const express = require('express');
+const morgan = require('morgan');
 const app = express();
 
 const path = require('path');
@@ -8,9 +9,10 @@ app.use(express.static(staticPath));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-//Routers
+app.use(morgan('dev'));
+
+//Router
 const router = require('./routes/index');
-//Homepage (Aún no se que habrá ahí)
 app.use(router);
 
 app.listen(3000)

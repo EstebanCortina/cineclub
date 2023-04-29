@@ -1,6 +1,6 @@
-
-
 const titulo = document.getElementById('titulo');
+const carousel = document.getElementById('carousel');
+const carouselInner = document.getElementById('carouselInner');
 const uno = document.getElementById('uno');
 const dos = document.getElementById('dos');
 const tres = document.getElementById('tres');
@@ -9,20 +9,54 @@ const btnMX = document.getElementById('btnMX');
 const btnES = document.getElementById('btnES');
 let poster = null;
 
-if (!localStorage.getItem('movie')) {
-  fetch('/movie')
-    .then(response => response.json())
-    .then(data => {
+const check = (async () => {
+  if (!localStorage.getItem('movie')) {
+    try {
+      let response = await fetch('/movie');
+      let data = await response.json();
       console.log("Fetch!");
       localStorage.setItem('movie', JSON.stringify(data));
-      console.log(JSON.parse(localStorage.getItem('movie')));
-    })
-    .catch(error => {
+
+
+      let movie = JSON.parse(localStorage.getItem('movie'));
+      for (let i = 0; i < movie.extra_posters.length; i++) {
+
+        carouselInner.innerHTML =
+          `
+      <div class="carousel-item active" data-bs-interval="10000">
+        <img src="https://image.tmdb.org/t/p/w500/${movie.extra_posters[i].file_path}" class="d-block w-100" alt="">
+      </div>
+        `
+
+
+      }
+
+    } catch (error) {
       console.error(error);
-    });
-} else {
-  console.log("No fetch");
-}
+    }
+  } else {
+    console.log("localStorage");
+    let movie = JSON.parse(localStorage.getItem('movie'));
+    //console.log(movie.extra_posters[0].file_path);
+    carouselInner.innerHTML +=
+      `
+      <div class="carousel-item active">
+        <img src="https://image.tmdb.org/t/p/w500/${movie.extra_posters[0].file_path}" class="d-block w-100 h-100" alt="">
+      </div>
+        `
+    for (let i = 1; i < movie.extra_posters.length; i++) {
+
+      carouselInner.innerHTML +=
+        `
+      <div class="carousel-item">
+        <img src="https://image.tmdb.org/t/p/w500/${movie.extra_posters[i].file_path}" class="d-block w-100 h-100" alt="">
+      </div>
+        `
+
+
+    }
+  }
+})();
 
 
 
