@@ -3,12 +3,32 @@ body {
 }
 
 .carousel {
-  width: 350px;
-  height: 550px;
+  width: 280px;
   margin: 0 auto;
 }
 
 .carousel-control-next,
 .carousel-control-prev {
-  height: 600px;
+  height: 480px;
+}
+
+.carousel-item {
+  height: 470px;
+  max-width: 280px;
+}
+
+#uno {
+  margin-bottom: 20px;
+}
+
+.flex {
+  display: flex;
+}
+
+.column {
+  flex-direction: column;
+}
+
+.information {
+  width: 200px;
 }
