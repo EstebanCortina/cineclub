@@ -1,11 +1,32 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@1,500&family=Oswald:wght@500&family=Roboto:ital,wght@1,500&display=swap');
+
 body {
+  /*
   background-color: rgb(47, 45, 45);
+  */
+  background-color: #273A51;
+
+  font-family: 'Montserrat',
+    sans-serif;
+  /*
+  font-family: 'Roboto', sans-serif;
+  */
+
+  color: whitesmoke;
 }
 
+button {
+  border: none;
+  background-color: whitesmoke;
+  color: #273A51;
+  border-radius: 20px;
+  font-family: 'Roboto', sans-serif;
+  font-size: 14px;
+}
 
 .carousel {
   margin: auto;
-  height: 400px;
+  height: 420px;
   max-width: 280px;
 }
 
@@ -18,4 +39,8 @@ body {
 .carousel-item {
   height: auto;
   max-width: 280px;
+}
+
+.information {
+  text-align: center;
 }

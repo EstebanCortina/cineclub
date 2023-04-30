@@ -55,6 +55,10 @@ const check = (async () => {
 
 
     }
+
+    titulo.innerHTML = movie.original_title;
+
+
   }
 })();
 
