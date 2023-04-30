@@ -2,33 +2,20 @@ body {
   background-color: rgb(47, 45, 45);
 }
 
+
 .carousel {
-  width: 280px;
-  margin: 0 auto;
+  margin: auto;
+  height: 400px;
+  max-width: 280px;
 }
 
 .carousel-control-next,
 .carousel-control-prev {
-  height: 480px;
+  height: 470px;
 }
+
 
 .carousel-item {
-  height: 470px;
+  height: auto;
   max-width: 280px;
-}
-
-#uno {
-  margin-bottom: 20px;
-}
-
-.flex {
-  display: flex;
-}
-
-.column {
-  flex-direction: column;
-}
-
-.information {
-  width: 200px;
 }
