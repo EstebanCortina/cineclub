@@ -25,14 +25,14 @@ button {
 }
 
 .carousel {
-  margin: auto;
   height: 420px;
   max-width: 280px;
+  margin-left: auto;
 }
 
 .carousel-control-next,
 .carousel-control-prev {
-  height: 470px;
+  max-height: 470px;
 }
 
 
@@ -43,4 +43,9 @@ button {
 
 .information {
   text-align: center;
+  margin-right: auto;
+}
+
+.logo {
+  max-width: 200px;
 }

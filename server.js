@@ -13,6 +13,6 @@ app.use(morgan('dev'));
 
 //Router
 const router = require('./routes/index');
-app.use(router);
+app.use('/', router);
 
 app.listen(3000)
