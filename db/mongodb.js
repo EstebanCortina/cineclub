@@ -1,27 +1,9 @@
-const express = require('express');
-const morgan = require('morgan');
-const app = express();
-
-const path = require('path');
-const staticPath = path.join(__dirname, "./public");
-app.use(express.static(staticPath));
-
-app.use(express.json());
-app.use(express.urlencoded({ extended: true }));
-
-app.use(morgan('dev'));
-
-//Router
-const router = require('./routes/index');
-app.use('/', router);
-
-/*
-//Mongo test
 const { MongoClient, ServerApiVersion } = require('mongodb');
-const uri = "mongodb+srv://esteban:yamJCMbUuRiA88CM@foro.ezbez1p.mongodb.net/?retryWrites=true&w=majority";
-
+//const { uri } = require('../config/config');
+const uri = 'mongodb+srv://esteban:yamJCMbUuRiA88CM@foro.ezbez1p.mongodb.net/?retryWrites=true&w=majority';
 const client = new MongoClient(uri, { useUnifiedTopology: true });
-
+module.exports = client;
+/*
 async function run() {
   try {
     // Connect the client to the server	(optional starting in v4.7)
@@ -42,6 +24,5 @@ async function run() {
     await client.close();
   }
 }
-run();
+
 */
-app.listen(3000)

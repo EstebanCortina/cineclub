@@ -19,4 +19,7 @@ router.get('/dailymovie', routerDailyMovie);
 const routerExample = require('./routerExample');
 router.get('/example', routerExample);
 
+const routerForum = require('./forum');
+router.get('/forum', routerForum);
+
 module.exports = router;
