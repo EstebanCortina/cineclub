@@ -15,7 +15,6 @@ app.use(morgan('dev'));
 const router = require('./routes/index');
 app.use('/', router);
 
-
 //Mongo test
 const { MongoClient, ServerApiVersion } = require('mongodb');
 const uri = "mongodb+srv://esteban:yamJCMbUuRiA88CM@foro.ezbez1p.mongodb.net/?retryWrites=true&w=majority";
@@ -43,4 +42,5 @@ async function run() {
   }
 }
 run();
+
 app.listen(3000)
