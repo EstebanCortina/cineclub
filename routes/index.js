@@ -1,5 +1,5 @@
 const express = require('express');
-
+const app = express();
 const path = require('path');
 const parentDirPath = path.join(__dirname, '..');
 const filePath = path.join(parentDirPath, '/views', 'index.html');
@@ -11,15 +11,15 @@ router.get('/', function (req, res) {
 });
 
 const routerMovie = require('./movie');
-router.get('/movie', routerMovie);
+router.use('/movie', routerMovie);
 
 const routerDailyMovie = require('./dailyMovie');
-router.get('/dailymovie', routerDailyMovie);
+router.use('/dailymovie', routerDailyMovie);
 
 const routerExample = require('./routerExample');
-router.get('/example', routerExample);
+router.use('/example', routerExample);
 
 const routerForum = require('./forum');
-router.get('/forum', routerForum);
+router.use('/forum', routerForum);
 
 module.exports = router;
