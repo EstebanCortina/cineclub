@@ -43,6 +43,9 @@ Movie {
         }
 }
 ```
+# Foro
+> Idea futura: Utilizar MongoDB para almacenar los Posts. El foro solo permitira comentar sobre la pelicula y tal vez dar like al comentario. Por el momento responder al comentario no me parece de vital importancia ya que la opinion deberia estar enfocada a la pelicula. (probablemente tenga una pregunta generadora el foro)
+
 > __Recordatorio:__ La pelicula una vez consultada, se guarda en localStorage y permanece ahí por 1 semana. Después, si es que hay un cambio en la película recomendada y esta es diferente a la que tiene el usuario en su navegador, se manda el request a la API. Caso contrario, la aplicación no realiza ninguna petición. Esto para no superar las 50 requests por segundo de TMDB.
 
 
